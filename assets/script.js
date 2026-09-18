@@ -3,6 +3,27 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  /* ---------------- Theme toggle (dark/light) ---------------- */
+  /* data-theme is already set on <html> by the inline head script to avoid a flash. */
+  var root = document.documentElement;
+  var themeToggles = document.querySelectorAll(".theme-toggle");
+  function syncToggles() {
+    var isDark = root.getAttribute("data-theme") === "dark";
+    themeToggles.forEach(function (btn) {
+      btn.setAttribute("aria-pressed", isDark ? "true" : "false");
+      btn.setAttribute("aria-label", isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+    });
+  }
+  syncToggles();
+  themeToggles.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("roboschool-theme", next); } catch (e) {}
+      syncToggles();
+    });
+  });
+
   /* ---------------- Stat counters ---------------- */
   var targets = [
     { el: document.getElementById("stat-1"), value: 80, suffix: " kg" },
