@@ -136,8 +136,6 @@ section{scroll-margin-top:var(--nav-h)}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px rgba(11,21,64,.36);color:var(--navy-900)}
 .btn-outline{background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.55);color:#fff}
 .btn-outline:hover{background:rgba(255,255,255,.26);transform:translateY(-3px);color:#fff}
-.btn-dark{background:var(--navy-900);color:#fff;box-shadow:var(--shadow-md)}
-.btn-dark:hover{transform:translateY(-3px);background:var(--navy-800)}
 .hero-art{position:relative}
 .hero-art-glow{position:absolute;inset:6%;border-radius:40px;background:radial-gradient(circle at 50% 50%,rgba(198,239,46,.5),transparent 70%);filter:blur(28px)}
 .hero-art-float{position:relative;animation:rsFloat 7s ease-in-out infinite}
@@ -306,7 +304,6 @@ section{scroll-margin-top:var(--nav-h)}
 .contacto-inner{position:relative;max-width:860px;margin:0 auto;text-align:center}
 .contacto-inner h2{margin:0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.04;color:#fff;text-wrap:pretty}
 .contacto-inner p{margin:18px auto 0;max-width:600px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.85)}
-.contacto-cta{margin-top:32px}
 .contacto-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:38px;text-align:left}
 .contacto-card{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:22px;transition:transform .3s var(--ease),background .3s}
 .contacto-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.2)}
