@@ -349,3 +349,78 @@ section{scroll-margin-top:var(--nav-h)}
   .hero{padding:calc(var(--nav-h) + 24px) 20px 60px;min-height:auto}
   .hero-credits{flex-wrap:wrap}
 }
+
+/* ---------- Large desktop: scale everything up ---------- */
+@media (min-width:1440px){
+  :root{--nav-h:80px}
+  .wrap,.nav-inner,.hero-inner,.solucion-inner,.footer-inner{max-width:1360px}
+  .ruta-wrap{max-width:1000px}
+  .contacto-inner{max-width:960px}
+
+  .brand-name{font-size:21px}
+  .brand-mark{width:40px;height:40px}
+  .brand-mark span{width:13px;height:13px}
+  .nav-link{font-size:15px;padding:9px 16px}
+  .theme-toggle,.nav-toggle{width:46px;height:46px}
+  .theme-toggle .icon,.nav-toggle .icon{width:21px;height:21px}
+
+  .hero-pill{padding:9px 18px 9px 11px}
+  .hero-pill-text{font-size:14px}
+  .hero-title{font-size:clamp(46px,7.4vw,128px)}
+  .hero-tagline{font-size:clamp(22px,2.6vw,40px)}
+  .hero-desc{font-size:18.5px;max-width:620px}
+  .btn{font-size:17.5px;padding:17px 32px}
+  .btn .icon{width:20px;height:20px}
+  .hero-credits{padding:14px 22px;gap:16px}
+  .credits-avatars .avatar{width:33px;height:33px;font-size:11px}
+  .credits-text strong{font-size:13.5px}
+  .credits-text span{font-size:12.5px}
+
+  .p-lead{font-size:18.5px}
+  .problema-head h2{font-size:clamp(32px,4.2vw,62px)}
+  .solucion-head h2{font-size:clamp(32px,4.2vw,62px)}
+  .ficha-head h2{font-size:clamp(32px,4.2vw,60px)}
+  .usos-head h2{font-size:clamp(30px,3.8vw,58px)}
+  .ruta-head h2{font-size:clamp(32px,4.2vw,60px)}
+  .contacto-inner h2{font-size:clamp(34px,5vw,70px)}
+  .contacto-inner p{font-size:18px}
+
+  .card-problem{padding:38px}
+  .card-problem h3{font-size:23px}
+  .card-problem p{font-size:16px}
+  .card-icon{width:58px;height:58px}
+
+  .stat{padding:38px 30px}
+  .stat-num{font-size:52px}
+  .stat-label{font-size:13.5px}
+
+  .card-paso{padding:30px}
+  .card-paso h3{font-size:21px}
+  .card-paso p{font-size:15.5px}
+  .plataforma-card{padding:34px}
+
+  .spec-row{padding:18px 28px}
+  .spec-k,.spec-v{font-size:15.5px}
+  .card-sistema{padding:26px 30px}
+  .card-sistema h3{font-size:20px}
+  .card-sistema p{font-size:15.5px}
+  .sistema-icon{width:50px;height:50px}
+
+  .card-uso{padding:32px}
+  .card-uso h3{font-size:20px}
+  .card-uso p{font-size:15.5px}
+  .uso-icon{width:50px;height:50px}
+  .highlight{padding:34px}
+  .highlight h3{font-size:21px}
+  .highlight p{font-size:15.5px}
+
+  .ruta-node{width:60px;height:60px;font-size:16px}
+  .ruta-body{padding:26px 30px}
+  .ruta-body h3{font-size:21px}
+  .ruta-body p{font-size:16px}
+
+  .contacto-card{padding:24px}
+  .contacto-card-text{font-size:15.5px}
+  .back-to-top{width:52px;height:52px}
+  .back-to-top .icon{width:22px;height:22px}
+}
