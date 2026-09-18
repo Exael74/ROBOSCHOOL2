@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#0B1540;font-family:'Nunito',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#0E3AA8;text-decoration:none}
+  a:hover{color:#16C4C0}
+  @keyframes rsUp{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+  @supports (animation-timeline:view()){[data-reveal]{animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both!important;animation-timeline:view()!important;animation-range:entry 0% cover 20%!important}}
+  @keyframes rsFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-18px) rotate(1deg)}}
+  @keyframes rsFloatSoft{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes rsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes rsPulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.8;transform:scale(1.25)}}
+  @keyframes rsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.12)}66%{transform:translate(-30px,25px) scale(.94)}}
+  @keyframes rsGrid{to{background-position:0 -120px}}
+  @keyframes rsLoad{0%{width:8%}55%{width:96%}100%{width:8%}}
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+</style>
+</helmet>
+
+<div style="background:#F4F8FC;overflow:hidden">
+
+<nav style="position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(11,21,64,.82);border-bottom:1px solid rgba(255,255,255,.12)">
+  <div style="max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:28px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;color:#fff">
+      <span style="width:34px;height:34px;border-radius:11px;background:linear-gradient(140deg,#16C4C0,#1857D6);display:grid;place-items:center;box-shadow:0 6px 18px rgba(22,196,192,.4)"><span style="width:12px;height:12px;border-radius:4px;background:#C6EF2E;display:block"></span></span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:19px;letter-spacing:.02em;color:#fff">ROBOSCHOOL</span>
+    </a>
+    <div style="flex:1;display:flex;gap:26px;justify-content:center;flex-wrap:wrap">
+      <a href="#problema" style="font-size:14px;font-weight:700;color:rgba(255,255,255,.72)">El problema</a>
+      <a href="#solucion" style="font-size:14px;font-weight:700;color:rgba(255,255,255,.72)">Cómo funciona</a>
+      <a href="#ficha" style="font-size:14px;font-weight:700;color:rgba(255,255,255,.72)">Ficha técnica</a>
+      <a href="#usos" style="font-size:14px;font-weight:700;color:rgba(255,255,255,.72)">Usos</a>
+      <a href="#ruta" style="font-size:14px;font-weight:700;color:rgba(255,255,255,.72)">Ruta 2026</a>
+    </div>
+    <a href="#contacto" style="font-family:'Baloo 2',cursive;font-weight:700;font-size:14px;padding:10px 20px;border-radius:999px;background:#C6EF2E;color:#0B1540;box-shadow:0 8px 22px rgba(198,239,46,.3);transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 12px 28px rgba(198,239,46,.45)">Contacto</a>
+  </div>
+</nav>
+
+<header id="top" style="position:relative;padding:92px 24px 120px;background:linear-gradient(135deg,#0FBFC4 0%,#128FD6 42%,#1443B8 72%,#122C86 100%);overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.07) 1px,transparent 1px);background-size:60px 60px;animation:rsGrid 9s linear infinite"></div>
+  <div style="position:absolute;top:-140px;left:-120px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(198,239,46,.35),transparent 68%);filter:blur(20px);animation:rsBlob 16s ease-in-out infinite"></div>
+  <div style="position:absolute;bottom:-180px;right:-90px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(20,255,235,.28),transparent 68%);filter:blur(24px);animation:rsBlob 20s ease-in-out infinite reverse"></div>
+  <div style="position:absolute;top:120px;right:12%;width:22px;height:22px;background:#C6EF2E;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:rsPulse 4s ease-in-out infinite"></div>
+  <div style="position:absolute;bottom:180px;left:8%;width:34px;height:34px;background:#C6EF2E;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);animation:rsPulse 5.5s ease-in-out infinite"></div>
+
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center">
+    <div>
+      <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) 0s both;display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px);margin-bottom:26px">
+        <span style="padding:4px 10px;border-radius:999px;background:#C6EF2E;color:#0B1540;font-family:'Baloo 2',cursive;font-weight:700;font-size:11px;letter-spacing:.06em">2026</span>
+        <span style="color:#fff;font-weight:700;font-size:13px">Robot de carga asistida · Proyecto estudiantil</span>
+      </div>
+      <h1 data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .05s both;margin:0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(46px,7.4vw,104px);line-height:.92;letter-spacing:-.02em;color:#fff;text-shadow:0 14px 40px rgba(8,20,60,.35)">ROBO<span style="color:#C6EF2E">SCHOOL</span></h1>
+      <p data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .12s both;margin:14px 0 0;font-family:'Baloo 2',cursive;font-weight:600;font-size:clamp(22px,2.6vw,34px);color:rgba(255,255,255,.95)">Innovación que te mueve</p>
+      <p data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .18s both;margin:20px 0 0;max-width:540px;font-size:17px;line-height:1.65;color:rgba(255,255,255,.82);text-wrap:pretty">Un robot móvil que transporta cargas pesadas por ti: sigue a la persona, sube y baja su plataforma y recorre pasillos, bodegas y aulas para que nadie tenga que levantar más de lo que su espalda aguanta.</p>
+      <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .24s both;display:flex;flex-wrap:wrap;gap:14px;margin-top:34px">
+        <a href="#problema" style="font-family:'Baloo 2',cursive;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;background:#C6EF2E;color:#0B1540;box-shadow:0 14px 34px rgba(11,21,64,.28);transition:transform .25s,box-shadow .25s" style-hover="transform:translateY(-3px);box-shadow:0 20px 40px rgba(11,21,64,.36)">Por qué lo construimos</a>
+        <a href="#ficha" style="font-family:'Baloo 2',cursive;font-weight:700;font-size:16px;padding:15px 30px;border-radius:999px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.55);color:#fff;transition:background .25s,transform .25s" style-hover="background:rgba(255,255,255,.26);transform:translateY(-3px)">Ver ficha técnica</a>
+      </div>
+    </div>
+
+    <div data-reveal style="animation:rsUp .9s cubic-bezier(.2,.7,.2,1) .2s both;position:relative">
+      <div style="position:absolute;inset:6%;border-radius:40px;background:radial-gradient(circle at 50% 50%,rgba(198,239,46,.5),transparent 70%);filter:blur(28px)"></div>
+      <div style="position:relative;animation:rsFloat 7s ease-in-out infinite">
+        <div style="border-radius:34px;overflow:hidden;border:4px solid rgba(255,255,255,.85);box-shadow:0 34px 70px rgba(8,20,60,.45)">
+          <img src="uploads/pasted-1789701247227-0.png" alt="RoboSchool, robot de carga asistida" style="display:block;width:100%;height:auto">
+        </div>
+        <div style="position:absolute;top:-20px;left:-26px;padding:10px 18px;border-radius:16px 16px 16px 4px;background:#fff;color:#0B1540;font-family:'Baloo 2',cursive;font-weight:700;font-size:14px;box-shadow:0 14px 30px rgba(8,20,60,.28);animation:rsFloatSoft 5s ease-in-out infinite">Hasta 80 kg</div>
+        <div style="position:absolute;bottom:-18px;right:-22px;padding:10px 18px;border-radius:16px 16px 4px 16px;background:#0B1540;color:#C6EF2E;font-family:'Baloo 2',cursive;font-weight:700;font-size:14px;box-shadow:0 14px 30px rgba(8,20,60,.35);animation:rsFloatSoft 6.5s ease-in-out infinite reverse">Cero cargas a la espalda</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:0;right:0;bottom:-1px;height:90px;background:#F4F8FC;clip-path:ellipse(75% 100% at 50% 100%)"></div>
+</header>
+
+<sc-if value="{{ mostrarMarquee }}" hint-placeholder-val="{{ true }}">
+<div style="background:#C6EF2E;padding:15px 0;overflow:hidden;border-top:3px solid #0B1540;border-bottom:3px solid #0B1540">
+  <div style="display:flex;width:max-content;animation:rsMarquee 26s linear infinite">
+    <div style="display:flex;gap:44px;padding-right:44px;align-items:center">
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">CARGA ASISTIDA</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">SALUD DE LA ESPALDA</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">ERGONOMÍA</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">SEGUIMIENTO AUTÓNOMO</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">HECHO POR ESTUDIANTES</span><span style="color:#0B1540">◆</span>
+    </div>
+    <div style="display:flex;gap:44px;padding-right:44px;align-items:center">
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">CARGA ASISTIDA</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">SALUD DE LA ESPALDA</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">ERGONOMÍA</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">SEGUIMIENTO AUTÓNOMO</span><span style="color:#0B1540">◆</span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:18px;color:#0B1540">HECHO POR ESTUDIANTES</span><span style="color:#0B1540">◆</span>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<section id="problema" style="background:#F4F8FC;padding:96px 24px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;max-width:720px">
+      <span style="display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(24,87,214,.1);color:#1857D6;font-weight:800;font-size:12px;letter-spacing:.1em">EL PROBLEMA</span>
+      <h2 style="margin:18px 0 0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(32px,4.2vw,52px);line-height:1.06;color:#0B1540;text-wrap:pretty">Levantar peso todos los días desgasta el cuerpo</h2>
+      <p style="margin:16px 0 0;font-size:17px;line-height:1.7;color:#43507A;text-wrap:pretty">En bodegas, escuelas, mercados y hospitales el trabajo pesado se hace a pulso: cajas, garrafones, material de laboratorio, sillas, cajas de archivo. El resultado son dolores lumbares, hernias, esguinces y ausencias que se acumulan con los años, sobre todo en personal de mantenimiento, intendencia y adultos mayores.</p>
+      <p style="margin:14px 0 0;font-size:17px;line-height:1.7;color:#43507A;text-wrap:pretty">Los equipos industriales que resuelven esto existen, pero cuestan lo que una institución escolar o un negocio pequeño no puede pagar. Ese hueco es el que atacamos: un robot de carga simple, reparable y barato, diseñado y armado por estudiantes.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:46px">
+      <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .05s both;transition:box-shadow .3s;background:#fff;border:1px solid rgba(11,21,64,.08);border-radius:24px;padding:30px;box-shadow:0 10px 30px rgba(11,21,64,.06)" style-hover="transform:translateY(-8px);box-shadow:0 24px 48px rgba(11,21,64,.14)">
+        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(140deg,#16C4C0,#1857D6);display:grid;place-items:center;margin-bottom:18px"><span style="display:block;width:18px;height:18px;border-radius:5px;background:#C6EF2E"></span></div>
+        <h3 style="margin:0 0 8px;font-family:'Baloo 2',cursive;font-weight:700;font-size:21px;color:#0B1540">Esfuerzo repetido</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#4A5680">Diez, veinte, cincuenta cargas al día. El daño no llega de un tirón: llega de la repetición y de la mala postura.</p>
+      </div>
+      <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .12s both;transition:box-shadow .3s;background:#fff;border:1px solid rgba(11,21,64,.08);border-radius:24px;padding:30px;box-shadow:0 10px 30px rgba(11,21,64,.06)" style-hover="transform:translateY(-8px);box-shadow:0 24px 48px rgba(11,21,64,.14)">
+        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(140deg,#C6EF2E,#16C4C0);display:grid;place-items:center;margin-bottom:18px"><span style="display:block;width:18px;height:18px;border-radius:50%;background:#0B1540"></span></div>
+        <h3 style="margin:0 0 8px;font-family:'Baloo 2',cursive;font-weight:700;font-size:21px;color:#0B1540">Trayectos largos</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#4A5680">Lo pesado casi nunca está donde se necesita. Cargar y caminar cien metros es la parte que más cansa.</p>
+      </div>
+      <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) .19s both;transition:box-shadow .3s;background:#fff;border:1px solid rgba(11,21,64,.08);border-radius:24px;padding:30px;box-shadow:0 10px 30px rgba(11,21,64,.06)" style-hover="transform:translateY(-8px);box-shadow:0 24px 48px rgba(11,21,64,.14)">
+        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(140deg,#1857D6,#0B1540);display:grid;place-items:center;margin-bottom:18px"><span style="display:block;width:18px;height:18px;background:#C6EF2E;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)"></span></div>
+        <h3 style="margin:0 0 8px;font-family:'Baloo 2',cursive;font-weight:700;font-size:21px;color:#0B1540">Soluciones caras</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#4A5680">Los montacargas y AGV comerciales quedan fuera del presupuesto y del espacio de la mayoría.</p>
+      </div>
+    </div>
+
+    <div data-stats data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;margin-top:46px;border-radius:26px;overflow:hidden;background:#0B1540">
+      <div style="padding:30px 26px;background:#0B1540">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:44px;line-height:1;color:#C6EF2E">{{ s1 }}</div>
+        <div style="margin-top:6px;font-size:13px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.6)">KG DE CARGA OBJETIVO</div>
+      </div>
+      <div style="padding:30px 26px;background:#0B1540">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:44px;line-height:1;color:#16C4C0">{{ s2 }}</div>
+        <div style="margin-top:6px;font-size:13px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.6)">HORAS DE AUTONOMÍA</div>
+      </div>
+      <div style="padding:30px 26px;background:#0B1540">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:44px;line-height:1;color:#C6EF2E">{{ s3 }}</div>
+        <div style="margin-top:6px;font-size:13px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.6)">PIEZAS IMPRESAS EN 3D</div>
+      </div>
+      <div style="padding:30px 26px;background:#0B1540">
+        <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:44px;line-height:1;color:#16C4C0">{{ s4 }}</div>
+        <div style="margin-top:6px;font-size:13px;font-weight:700;letter-spacing:.06em;color:rgba(255,255,255,.6)">ESTUDIANTES EN EL EQUIPO</div>
+      </div>
+    </div>
+    <p data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;margin:14px 0 0;font-size:12.5px;color:#7A85A8">Cifras del prototipo actual y sus metas de diseño para el ciclo 2026.</p>
+  </div>
+</section>
+
+<section id="solucion" style="position:relative;background:#0B1540;padding:96px 24px;overflow:hidden">
+  <div style="position:absolute;top:-120px;right:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(22,196,192,.3),transparent 70%);filter:blur(20px);animation:rsBlob 18s ease-in-out infinite"></div>
+  <div style="position:relative;max-width:1200px;margin:0 auto">
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between;margin-bottom:44px">
+      <div style="max-width:660px">
+        <span style="display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(198,239,46,.16);color:#C6EF2E;font-weight:800;font-size:12px;letter-spacing:.1em">CÓMO FUNCIONA</span>
+        <h2 style="margin:18px 0 0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(32px,4.2vw,52px);line-height:1.06;color:#fff">Tú decides qué mover; el robot lo mueve</h2>
+      </div>
+      <p style="margin:0;max-width:340px;font-size:15px;line-height:1.7;color:rgba(255,255,255,.66)">Cuatro pasos, sin capacitación técnica: se opera con tres botones y un mando sencillo.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+      <sc-for list="{{ pasos }}" as="p" hint-placeholder-count="4">
+        <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;transition:background .3s,box-shadow .3s;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px;backdrop-filter:blur(6px)" style-hover="background:rgba(255,255,255,.12);box-shadow:0 22px 46px rgba(0,0,0,.35)">
+          <span style="font-family:'Baloo 2',cursive;font-weight:800;font-size:13px;color:#0B1540;background:#C6EF2E;padding:5px 11px;border-radius:999px">{{ p.n }}</span>
+          <h3 style="margin:16px 0 8px;font-family:'Baloo 2',cursive;font-weight:700;font-size:20px;color:#fff">{{ p.titulo }}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.7)">{{ p.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;margin-top:22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:30px">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;margin-bottom:16px">
+        <h3 style="margin:0;font-family:'Baloo 2',cursive;font-weight:700;font-size:20px;color:#fff">Plataforma elevadora en acción</h3>
+        <span style="font-size:13px;font-weight:700;color:rgba(255,255,255,.5)">Tijera de acero · recorrido 0 → 45 cm</span>
+      </div>
+      <div style="height:14px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden">
+        <div style="height:100%;border-radius:999px;background:linear-gradient(90deg,#C6EF2E,#16C4C0);animation:rsLoad 4.5s ease-in-out infinite"></div>
+      </div>
+      <p style="margin:14px 0 0;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.7);max-width:720px">La plataforma sube a la altura de la mesa o del carrito para que la carga se deslice de lado, sin levantarla. Ese detalle es el que evita la flexión de espalda, que es donde ocurre la mayoría de las lesiones.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ficha" style="background:#F4F8FC;padding:96px 24px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;max-width:640px;margin-bottom:44px">
+      <span style="display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(24,87,214,.1);color:#1857D6;font-weight:800;font-size:12px;letter-spacing:.1em">FICHA TÉCNICA</span>
+      <h2 style="margin:18px 0 0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(32px,4.2vw,50px);line-height:1.08;color:#0B1540">Qué lleva dentro</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;align-items:start">
+      <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;background:#fff;border:1px solid rgba(11,21,64,.08);border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(11,21,64,.06)">
+        <sc-for list="{{ especificaciones }}" as="e" hint-placeholder-count="7">
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:16px 24px;border-bottom:1px solid rgba(11,21,64,.07)">
+            <span style="font-size:14.5px;font-weight:700;color:#4A5680">{{ e.k }}</span>
+            <span style="font-size:14.5px;font-weight:800;color:#0B1540;text-align:right">{{ e.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:grid;gap:18px">
+        <sc-for list="{{ sistemas }}" as="sis" hint-placeholder-count="4">
+          <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;transition:transform .3s,box-shadow .3s;background:#fff;border:1px solid rgba(11,21,64,.08);border-left:6px solid #C6EF2E;border-radius:20px;padding:22px 26px;box-shadow:0 8px 24px rgba(11,21,64,.05)" style-hover="transform:translateX(6px);box-shadow:0 18px 38px rgba(11,21,64,.12)">
+            <h3 style="margin:0 0 6px;font-family:'Baloo 2',cursive;font-weight:700;font-size:19px;color:#0B1540">{{ sis.titulo }}</h3>
+            <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4A5680">{{ sis.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="usos" style="background:#fff;padding:96px 24px">
+  <div style="max-width:1200px;margin:0 auto">
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;max-width:660px;margin-bottom:40px">
+      <span style="display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(22,196,192,.14);color:#0E8C93;font-weight:800;font-size:12px;letter-spacing:.1em">DÓNDE SIRVE</span>
+      <h2 style="margin:18px 0 0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(30px,3.8vw,48px);line-height:1.08;color:#0B1540">Pensado para espacios reales, no para una pista de pruebas</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px">
+      <sc-for list="{{ usos }}" as="u" hint-placeholder-count="4">
+        <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;transition:transform .3s,box-shadow .3s;background:linear-gradient(160deg,#F4F8FC,#E8F1FA);border:1px solid rgba(11,21,64,.08);border-radius:22px;padding:26px" style-hover="transform:translateY(-6px);box-shadow:0 20px 40px rgba(11,21,64,.12)">
+          <h3 style="margin:0 0 8px;font-family:'Baloo 2',cursive;font-weight:700;font-size:19px;color:#0B1540">{{ u.titulo }}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:#4A5680">{{ u.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px">
+      <div style="background:#0B1540;border-radius:22px;padding:30px">
+        <h3 style="margin:0 0 10px;font-family:'Baloo 2',cursive;font-weight:700;font-size:20px;color:#C6EF2E">Seguridad primero</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.75)">Paro de emergencia físico, sensores de proximidad que detienen el avance a 40 cm, velocidad limitada a paso humano y freno automático en rampa.</p>
+      </div>
+      <div style="background:linear-gradient(140deg,#16C4C0,#1857D6);border-radius:22px;padding:30px">
+        <h3 style="margin:0 0 10px;font-family:'Baloo 2',cursive;font-weight:700;font-size:20px;color:#fff">Impacto en salud</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.9)">Medimos cuántos levantamientos evita por jornada y registramos el esfuerzo percibido del personal antes y después de usarlo.</p>
+      </div>
+      <div style="background:#C6EF2E;border-radius:22px;padding:30px">
+        <h3 style="margin:0 0 10px;font-family:'Baloo 2',cursive;font-weight:700;font-size:20px;color:#0B1540">Reparable y abierto</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.65;color:#17224F">Piezas estándar, planos documentados y refacciones imprimibles en 3D: cualquier taller escolar puede darle mantenimiento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ mostrarRuta }}" hint-placeholder-val="{{ true }}">
+<section id="ruta" style="background:#F4F8FC;padding:96px 24px">
+  <div style="max-width:1100px;margin:0 auto">
+    <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;text-align:center;max-width:640px;margin:0 auto 52px">
+      <span style="display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(24,87,214,.1);color:#1857D6;font-weight:800;font-size:12px;letter-spacing:.1em">RUTA 2026</span>
+      <h2 style="margin:18px 0 0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(32px,4.2vw,50px);line-height:1.08;color:#0B1540">Del boceto al robot trabajando</h2>
+    </div>
+    <div style="display:grid;gap:16px">
+      <sc-for list="{{ ruta }}" as="r" hint-placeholder-count="4">
+        <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;transition:transform .3s,box-shadow .3s;display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;align-items:center;background:#fff;border:1px solid rgba(11,21,64,.08);border-left:6px solid #16C4C0;border-radius:20px;padding:24px 28px;box-shadow:0 8px 24px rgba(11,21,64,.05)" style-hover="transform:translateX(8px);box-shadow:0 18px 38px rgba(11,21,64,.12)">
+          <div style="font-family:'Baloo 2',cursive;font-weight:800;font-size:26px;color:#1857D6">{{ r.q }}</div>
+          <div>
+            <h3 style="margin:0 0 6px;font-family:'Baloo 2',cursive;font-weight:700;font-size:20px;color:#0B1540">{{ r.titulo }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#4A5680">{{ r.desc }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<section id="contacto" style="position:relative;padding:100px 24px;background:linear-gradient(135deg,#122C86,#1857D6 45%,#0FBFC4);overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:48px 48px"></div>
+  <div style="position:absolute;bottom:-160px;left:-60px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(198,239,46,.34),transparent 70%);filter:blur(22px);animation:rsBlob 17s ease-in-out infinite"></div>
+  <div data-reveal style="animation:rsUp .8s cubic-bezier(.2,.7,.2,1) both;position:relative;max-width:860px;margin:0 auto;text-align:center">
+    <h2 style="margin:0;font-family:'Baloo 2',cursive;font-weight:800;font-size:clamp(34px,5vw,60px);line-height:1.04;color:#fff;text-wrap:pretty">Queremos probarlo donde más se carga</h2>
+    <p style="margin:18px auto 0;max-width:600px;font-size:17px;line-height:1.7;color:rgba(255,255,255,.85)">Buscamos espacios para pilotos, asesoría técnica y apoyo con materiales. Si tu área mueve peso a diario, podemos medir juntos cuánto esfuerzo se puede quitar.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:38px;text-align:left">
+      <div style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:22px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:#C6EF2E;margin-bottom:6px">PILOTOS</div>
+        <div style="font-size:15px;line-height:1.55;color:#fff">Prueba de 2 semanas con medición de cargas evitadas.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:22px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:#C6EF2E;margin-bottom:6px">MENTORÍA</div>
+        <div style="font-size:15px;line-height:1.55;color:#fff">Asesoría en control, baterías y estructura mecánica.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:18px;padding:22px">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.08em;color:#C6EF2E;margin-bottom:6px">MATERIALES</div>
+        <div style="font-size:15px;line-height:1.55;color:#fff">Perfil de aluminio, motores, filamento y celdas de litio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#08102F;padding:44px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span style="width:30px;height:30px;border-radius:10px;background:linear-gradient(140deg,#16C4C0,#1857D6);display:grid;place-items:center"><span style="width:10px;height:10px;border-radius:3px;background:#C6EF2E;display:block"></span></span>
+      <span style="font-family:'Baloo 2',cursive;font-weight:700;font-size:16px;color:#fff">ROBOSCHOOL · Innovación que te mueve</span>
+    </div>
+    <div style="display:flex;gap:22px;flex-wrap:wrap">
+      <a href="#problema" style="font-size:13.5px;font-weight:700;color:rgba(255,255,255,.6)">El problema</a>
+      <a href="#ficha" style="font-size:13.5px;font-weight:700;color:rgba(255,255,255,.6)">Ficha técnica</a>
+      <a href="#contacto" style="font-size:13.5px;font-weight:700;color:rgba(255,255,255,.6)">Contacto</a>
+    </div>
+    <span style="font-size:13px;color:rgba(255,255,255,.38)">Robot de carga asistida · Proyecto estudiantil 2026</span>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secciones&quot;},&quot;mostrarRuta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Secciones&quot;}}">
+class Component extends DCLogic {
+  state = { s: [0, 0, 0, 0] };
+
+  renderVals() {
+    return {
+      mostrarMarquee: this.props.mostrarMarquee ?? true,
+      mostrarRuta: this.props.mostrarRuta ?? true,
+      s1: this.state.s[0] + " kg",
+      s2: this.state.s[1],
+      s3: this.state.s[2] + "+",
+      s4: this.state.s[3],
+      pasos: [
+        { n: "01", titulo: "Cargas sin levantar", desc: "La plataforma se nivela con la mesa o el estante y la caja se desliza de lado sobre los rodillos." },
+        { n: "02", titulo: "Eliges el modo", desc: "Sígueme, para que el robot te acompañe a paso constante, o manual con el mando de dos palancas." },
+        { n: "03", titulo: "Recorre el trayecto", desc: "Tracción 4x4 con ruedas de goma: sube rampas, cruza umbrales y frena solo si detecta un obstáculo." },
+        { n: "04", titulo: "Descarga a la altura correcta", desc: "Al llegar, la tijera sube o baja hasta el nivel del destino y la carga vuelve a salir deslizándose." }
+      ],
+      especificaciones: [
+        { k: "Carga útil objetivo", v: "80 kg" },
+        { k: "Dimensiones", v: "70 × 48 × 35 cm" },
+        { k: "Peso del robot", v: "26 kg" },
+        { k: "Velocidad máxima", v: "4 km/h (paso humano)" },
+        { k: "Elevación de plataforma", v: "0 a 45 cm" },
+        { k: "Batería", v: "Litio 24 V · 6 h de uso mixto" },
+        { k: "Tracción", v: "4 motores con reductora" },
+        { k: "Control", v: "Microcontrolador + mando inalámbrico" },
+        { k: "Materiales", v: "Perfil de aluminio y piezas PLA/PETG" }
+      ],
+      sistemas: [
+        { titulo: "Chasis y tracción", desc: "Bastidor de perfil de aluminio con suspensión simple y cuatro ruedas motrices para no atascarse en desniveles." },
+        { titulo: "Plataforma elevadora", desc: "Mecanismo de tijera con husillo y rodillos superiores: la carga entra y sale sin esfuerzo humano." },
+        { titulo: "Percepción y seguridad", desc: "Sensores ultrasónicos al frente y atrás, detección de la persona a seguir y paro de emergencia accesible." },
+        { titulo: "Control y energía", desc: "Control PID de velocidad, gestión de batería con aviso de carga baja y modo de arrastre manual si se apaga." }
+      ],
+      usos: [
+        { titulo: "Escuelas y laboratorios", desc: "Traslado de material, cajas de archivo, garrafones y equipo de laboratorio entre aulas y almacén." },
+        { titulo: "Bodegas pequeñas", desc: "Reparto interno de cajas sin montacargas y sin ocupar a dos personas por viaje." },
+        { titulo: "Clínicas y asilos", desc: "Ropa de cama, insumos y despensa en pasillos estrechos, a velocidad segura para peatones." },
+        { titulo: "Negocios familiares", desc: "Descarga de mercancía y acomodo diario, especialmente donde trabaja gente mayor." }
+      ],
+      ruta: [
+        { q: "Q1", titulo: "Investigación y requisitos", desc: "Entrevistas con personal de intendencia y almacén, medición de pesos y trayectos reales." },
+        { q: "Q2", titulo: "Prototipo mecánico", desc: "Chasis, tracción y tijera funcionando con carga de prueba de 40 kg." },
+        { q: "Q3", titulo: "Electrónica y seguridad", desc: "Modo sígueme, sensores de proximidad, paro de emergencia y pruebas de frenado en rampa." },
+        { q: "Q4", titulo: "Piloto y documentación", desc: "Dos semanas de uso real, medición de cargas evitadas y publicación de planos y manual." }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    const targets = [80, 6, 40, 12];
+    let ran = false;
+    const run = () => {
+      if (ran) return;
+      ran = true;
+      const start = performance.now(), dur = 1400;
+      const tick = (now) => {
+        const p = Math.min(1, (now - start) / dur);
+        const e = 1 - Math.pow(1 - p, 3);
+        this.setState({ s: targets.map((t) => Math.round(t * e)) });
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const stats = document.querySelector("[data-stats]");
+    if (stats && "IntersectionObserver" in window) {
+      const so = new IntersectionObserver((es) => {
+        if (es.some((e) => e.isIntersecting)) { so.disconnect(); run(); }
+      }, { threshold: 0.25 });
+      so.observe(stats);
+      setTimeout(run, 6000);
+    } else {
+      run();
+    }
+  }
+}
+</script>
+</body>
+</html>
